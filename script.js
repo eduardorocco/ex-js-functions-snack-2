@@ -67,5 +67,40 @@ timer()
 // 🏆 Snack 5
 // Crea una funzione stampaOgniSecondo con setInterval.
 // Definisci una funzione che accetta un messaggio e lo stampa ogni secondo.
-
 // Nota: Questa funzione creerà un loop infinito. Interrompilo manualmente o usa clearInterval() in un altro script.
+
+// function stampaOgniSecondo(messaggio){
+//     setInterval(() => {
+//         console.log(messaggio)
+//     },1000)
+// }
+
+// stampaOgniSecondo("Ciao")
+
+
+// 🏆 Snack 6
+// Crea un contatore automatico con setInterval
+// Definisci una funzione creaContatoreAutomatico che accetta un intervallo di tempo e restituisce una funzione che avvia un setInterval, incrementando un contatore e stampandolo.
+
+function creaContatoreAutomatico(time){
+    let count = 0
+    return function(){
+        setInterval(() => {
+            count++
+            console.log(count)
+        },time)
+    }
+}
+// 🏆 Snack 7
+// Crea una funzione che ferma un timer dopo un certo tempo
+// Scrivi una funzione eseguiEferma che accetta un messaggio, un tempo di avvio e un tempo di stop. Il messaggio deve essere stampato a intervalli regolari, ma si deve fermare dopo il tempo di stop.
+
+function eseguiEferma(messaggio, start, stop){
+    let timer = setInterval(() => {
+        console.log(messaggio)
+    }, start)
+
+    setTimeout(() => {
+        clearInterval(timer)
+    }, stop)
+}
